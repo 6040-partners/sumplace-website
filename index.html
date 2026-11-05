@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sumplace | One platform to sell, deliver, support and bill</title>
+<meta name="description" content="Sumplace is one platform to sell, deliver, support and bill: CRM, quoting, agreements, service desk with a built-in AI call centre, projects and invoicing.">
+<link rel="canonical" href="https://getsumplace.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://getsumplace.com/">
+<meta property="og:title" content="Sumplace | One platform to sell, deliver, support and bill">
+<meta property="og:description" content="Sumplace is one platform to sell, deliver, support and bill: CRM, quoting, agreements, service desk with a built-in AI call centre, projects and invoicing.">
+<meta property="og:image" content="https://getsumplace.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1020">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500&family=Poppins:wght@400;500;600&display=swap">
+<style>
+/* Layout: enterprise product site. Dark navy hero with a real product window, then alternating "feature + product UI" bands, platform/security grid, pricing, FAQ, CTA. */
+:root{
+  --bg:#FFFFFF; --bg-2:#F6F7FB; --ink:#0B1020; --text:#3D4459; --muted:#6B7287; --line:#E5E8F0;
+  --brand:#4F46E5; --brand-soft:#EEF0FF;
+  --hero:#0B1020; --hero-text:#C9CEE0; --hero-line:#1E2640;
+  --f-sans:"Geist","Helvetica Neue",Arial,sans-serif; --f-mono:"Geist Mono",ui-monospace,Menlo,monospace; --f-app:"Poppins","Geist",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A0E1A; --bg-2:#10162A; --ink:#F3F5FB; --text:#C3C8DA; --muted:#8D94AD; --line:#222A44;
+  --brand:#818CF8; --brand-soft:#1A2042;
+  --hero:#060912; --hero-text:#B9BFD6; --hero-line:#1A2140; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A0E1A; --bg-2:#10162A; --ink:#F3F5FB; --text:#C3C8DA; --muted:#8D94AD; --line:#222A44;
+  --brand:#818CF8; --brand-soft:#1A2042;
+  --hero:#060912; --hero-text:#B9BFD6; --hero-line:#1A2140; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f-sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{color:var(--ink);font-family:var(--f-sans);letter-spacing:-.03em;line-height:1.08;text-wrap:balance;margin:0;font-weight:600}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+.kicker{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);display:block;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;border-radius:10px;font:600 15px var(--f-sans);border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;transition:border-color .15s, filter .15s}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:#4F46E5;border-color:#4F46E5;color:#fff}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+section{padding-block:clamp(64px,9vw,120px)}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:56ch;margin-top:18px}
+.h2{font-size:clamp(32px,4.2vw,50px)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--hero) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--hero-line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--hero)}
+header .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--f-app);font-weight:600;font-size:21px;letter-spacing:-.03em;color:#fff}
+.logo svg{width:28px;height:28px}
+header nav{display:flex;gap:24px;font-size:14.5px}
+header nav a{color:var(--hero-text)}
+header nav a:hover{color:#fff}
+header .sp{flex:1}
+header .btn{height:38px;font-size:14px}
+header .btn.ghost{background:transparent;color:#fff;border-color:#2A3456}
+.hero{background:var(--hero);color:var(--hero-text);padding-block:clamp(56px,8vw,100px) 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto;height:120%;background:radial-gradient(60% 50% at 50% 0%,rgba(79,70,229,.38),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #2A3456;border-radius:999px;padding:5px 12px 5px 6px;font-size:13.5px;color:var(--hero-text);background:rgba(255,255,255,.04)}
+.pill b{background:#4F46E5;color:#fff;font-weight:600;border-radius:999px;padding:1px 8px;font-size:12px}
+.hero h1{color:#fff;font-size:clamp(40px,6.4vw,76px);margin:22px auto 0;max-width:15ch}
+.hero .lead{color:var(--hero-text);margin-inline:auto}
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.hero .cta .btn:not(.primary){background:transparent;color:#fff;border-color:#2A3456}
+.hero .meta{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:14px}
+.hero .meta span::before{content:"\2713";color:#34D399;margin-right:7px;font-weight:700}
+.window{margin:56px auto 0;max-width:1120px;border-radius:14px 14px 0 0;border:1px solid #27304F;border-bottom:0;background:#fff;box-shadow:0 -10px 80px -10px rgba(79,70,229,.45);overflow:hidden;text-align:left;font-family:var(--f-app);color:#0A1326}
+.wbar{height:38px;background:#EEF1F6;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid #E1E6EE}
+.wbar i{width:11px;height:11px;border-radius:50%;background:#D5DAE3}
+.wbar .url{margin-left:14px;flex:1;max-width:340px;height:24px;border-radius:7px;background:#fff;font-size:11.5px;color:#7A8499;display:flex;align-items:center;padding:0 10px;font-family:var(--f-sans);white-space:nowrap;overflow:hidden}
+.app{display:grid;grid-template-columns:200px 1fr;min-height:470px}
+.aside{background:#F6F8FB;border-right:1px solid #E6EAF0;padding:16px 10px;font-size:12.5px;display:flex;flex-direction:column;gap:2px}
+.aside .brand{display:flex;align-items:center;gap:7px;font-weight:600;font-size:15px;padding:0 8px 12px}
+.aside .brand svg{width:20px;height:20px}
+.aside .g{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#98A2B3;padding:10px 8px 4px;font-weight:600}
+.aside .n{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:7px;color:#5D6B85;font-weight:500}
+.aside .n .c{margin-left:auto;font-size:10px;background:#E9EDF3;border-radius:99px;padding:0 6px}
+.aside .n.on{background:#fff;color:#0A1326;box-shadow:0 0 0 1px #E6EAF0}
+.aside .sq{width:14px;height:14px;border-radius:4px;background:#D9DEE8;flex:none}
+.aside .n.on .sq{background:#4F46E5}
+.main{padding:18px 22px;min-width:0;overflow:hidden}
+.mh{display:flex;align-items:center;gap:10px}
+.mh h4{margin:0;font-size:18px;font-weight:600}
+.mh .s{flex:1}
+.mh .b{font-size:11.5px;font-weight:500;border:1px solid #E6EAF0;border-radius:7px;padding:5px 10px;white-space:nowrap}
+.mh .b.p{background:#0A1326;color:#fff;border-color:#0A1326}
+.kp{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.kp div{border:1px solid #E6EAF0;border-radius:11px;padding:10px 12px;position:relative;min-width:0}
+.kp small{font-size:10.5px;color:#5D6B85;font-weight:500}
+.kp b{display:block;font-size:19px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kp em{font-style:normal;font-size:10.5px;font-weight:600;color:#0B7A55}
+.kp svg{position:absolute;right:10px;top:12px;width:62px;height:24px;fill:none;stroke-width:2}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.col{background:#F6F8FB;border-radius:11px;padding:8px;min-width:0}
+.col h5{margin:2px 4px 8px;font-size:11px;font-weight:600;color:#5D6B85;display:flex;justify-content:space-between;gap:6px}
+.deal{background:#fff;border:1px solid #E6EAF0;border-radius:9px;padding:8px 9px;margin-bottom:7px;font-size:11px}
+.deal .t{display:flex;align-items:center;gap:6px;font-weight:600;font-size:11.5px}
+.lg{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;font-size:8px;font-weight:600;color:#fff;flex:none}
+.deal .r{display:flex;justify-content:space-between;gap:6px;margin-top:6px;color:#5D6B85}
+.deal .r b{color:#0A1326;font-weight:600;font-variant-numeric:tabular-nums}
+.tag{font-size:9.5px;font-weight:600;border-radius:5px;padding:1px 6px;white-space:nowrap}
+.trust{padding-block:40px;border-bottom:1px solid var(--line)}
+.trust .wrap{display:flex;align-items:center;gap:14px 34px;flex-wrap:wrap;justify-content:center;color:var(--muted)}
+.trust strong{color:var(--ink);font-weight:600;font-size:14px}
+.trust span{font-weight:600;letter-spacing:-.01em;font-size:16px}
+.band{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:center}
+.band.rev{grid-template-columns:1.15fr 1fr}
+.band.rev .copy{order:2}
+.copy{min-width:0}
+.copy ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.copy li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:15.5px}
+.copy li b{color:var(--ink);font-weight:600;display:block}
+.copy li::before{content:"";width:22px;height:22px;border-radius:7px;background:var(--brand-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366F1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L19 7'/%3E%3C/svg%3E") center/13px no-repeat;margin-top:2px}
+.shot{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:22px;min-width:0}
+.panel{background:#fff;border:1px solid #E6EAF0;border-radius:12px;font-family:var(--f-app);color:#0A1326;box-shadow:0 12px 30px -12px rgba(11,16,32,.18);overflow:hidden}
+.panel .ph{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #EEF1F5;font-size:13px;font-weight:600}
+.panel .ph .s{flex:1}
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;padding:14px}
+.flow div{border:1px solid #E6EAF0;border-radius:10px;padding:9px;font-size:11px;min-width:0;color:#5D6B85}
+.flow div b{display:block;font-size:12.5px;font-weight:600;margin-bottom:2px;color:#0A1326}
+.flow div.on{border-color:#4F46E5;background:#F3F2FF}
+.lines{padding:0 14px 14px;font-size:12px}
+.lines .l{display:grid;grid-template-columns:1fr 50px 76px;gap:8px;padding:8px 0;border-bottom:1px solid #F0F2F6;align-items:center}
+.lines .l:last-child{border:0}
+.lines .l span:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.lines .hd{color:#8A94A6;font-size:10.5px;font-weight:500}
+.tot{display:flex;justify-content:space-between;padding:10px 14px;background:#F6F8FB;font-size:12.5px;font-weight:600}
+.tkt{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:11px 14px;border-bottom:1px solid #F0F2F6;font-size:12px;align-items:center}
+.tkt b{font-weight:600;font-size:12.5px}
+.tkt small{color:#7A8499}
+.sla{display:flex;align-items:center;gap:6px}
+.sla i{width:58px;height:6px;border-radius:9px;background:#EEF1F5;position:relative;overflow:hidden}
+.sla i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--c);border-radius:9px}
+.call{display:flex;gap:12px;padding:14px;align-items:center;background:linear-gradient(135deg,#F3F2FF,#F7F0FF)}
+.call .av{width:38px;height:38px;border-radius:50%;background:#4F46E5;display:grid;place-items:center;color:#fff;font-size:12px;font-weight:600;flex:none}
+.wave{display:flex;gap:3px;align-items:center;height:26px;flex:1;min-width:40px}
+.wave i{flex:1;background:#7C3AED;border-radius:2px;opacity:.75}
+.tl{padding:6px 14px 14px;font-size:12px}
+.tl div{display:flex;gap:10px;padding:7px 0}
+.tl i{width:22px;height:22px;border-radius:7px;flex:none;display:grid;place-items:center;font-style:normal;font-size:11px}
+.tl small{display:block;color:#7A8499}
+.rows{padding:12px 14px 14px;font-size:12px;display:grid;gap:7px}
+.rows div{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:9px;background:#F6F8FB}
+.ok{color:#0B7A55;font-weight:600;font-size:11.5px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:48px}
+.gi{background:var(--bg);padding:28px;min-width:0}
+.gi h3{font-size:18px;margin:14px 0 8px}
+.gi p{color:var(--muted);font-size:15px}
+.ic{width:38px;height:38px;border-radius:10px;background:var(--brand-soft);display:grid;place-items:center;color:var(--brand)}
+.ic svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ints{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.ints span{border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-weight:600;font-size:14.5px;color:var(--ink);background:var(--bg)}
+.alt{background:var(--bg-2);border-block:1px solid var(--line)}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+.plan{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--bg);display:flex;flex-direction:column;gap:12px;min-width:0}
+.plan.hl{border:2px solid var(--brand)}
+.plan h3{font-size:20px}
+.plan .d{color:var(--muted);font-size:14.5px;min-height:46px}
+.price{display:flex;align-items:baseline;gap:6px;color:var(--ink);flex-wrap:wrap}
+.price b{font-size:46px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.price span{color:var(--muted);font-size:14px}
+.plan ul{list-style:none;padding:0;margin:8px 0 18px;display:grid;gap:9px;font-size:14.5px}
+.plan li{display:grid;grid-template-columns:18px 1fr;gap:10px}
+.plan li::before{content:"\2713";color:var(--brand);font-weight:700}
+.plan .btn{margin-top:auto}
+.badge{align-self:flex-start;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);background:var(--brand-soft);border-radius:999px;padding:3px 10px}
+.fine{color:var(--muted);font-size:13.5px;margin-top:20px}
+.faqgrid{display:grid;grid-template-columns:1fr 1.6fr;gap:56px}
+details{border-bottom:1px solid var(--line);padding-block:18px}
+summary{cursor:pointer;list-style:none;color:var(--ink);font-weight:600;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--muted);font-weight:400;font-size:22px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted);margin-top:10px;max-width:62ch;font-size:15.5px}
+.ctaband{background:#0B1020;color:#C9CEE0;border-radius:24px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:44px;position:relative;overflow:hidden}
+.ctaband::before{content:"";position:absolute;right:-20%;top:-60%;width:80%;height:160%;background:radial-gradient(closest-side,rgba(124,58,237,.4),transparent);pointer-events:none}
+.ctaband h2{color:#fff;font-size:clamp(30px,3.8vw,44px)}
+.ctaband p{margin-top:14px;max-width:44ch}
+.ctaband > *{position:relative;min-width:0}
+.seg{display:inline-flex;background:#141B33;border:1px solid #1E2640;border-radius:10px;padding:4px;margin-bottom:16px}
+.seg button{border:0;background:transparent;color:#C9CEE0;font:600 14px var(--f-sans);padding:8px 14px;border-radius:7px;cursor:pointer}
+.seg button[aria-selected="true"]{background:#fff;color:#0B1020}
+form{display:grid;gap:12px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:6px;font-size:13px;font-weight:500;color:#DDE1EE}
+input,select{height:44px;border-radius:10px;border:1px solid #2A3456;background:#111833;color:#fff;padding:0 12px;font:500 15px var(--f-sans);width:100%;min-width:0}
+select option{color:#0B1020}
+.note{font-size:12.5px;color:#8D94AD}
+.done{display:none;padding:14px 16px;border-radius:10px;background:#122a22;border:1px solid #1f6e52;color:#CFF5E4;font-size:14.5px;margin-top:12px}
+footer{padding-block:56px 64px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.fgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:32px}
+.fgrid h4{color:var(--ink);font-size:13.5px;margin:0 0 12px;font-weight:600}
+.fgrid a{display:block;padding:3px 0}
+.fgrid a:hover{color:var(--ink)}
+footer .logo{color:var(--ink);font-size:19px}
+.legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+@media (max-width:1000px){
+  header nav{display:none}
+  .band,.band.rev,.faqgrid,.ctaband{grid-template-columns:1fr}
+  .band.rev .copy{order:0}
+  .grid3,.plans{grid-template-columns:1fr 1fr}
+  .app{grid-template-columns:1fr}.aside{display:none}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  header .btn.ghost{display:none}
+  .grid3,.plans,.fr{grid-template-columns:1fr}
+  .kp{grid-template-columns:1fr 1fr}
+  .board{grid-template-columns:1fr 1fr}
+  .board .col:nth-child(n+3){display:none}
+  .flow{grid-template-columns:1fr 1fr}
+  .flow div:nth-child(5){display:none}
+  .shot{padding:12px}
+  .mh .b:not(.p){display:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="mk" viewBox="0 0 64 64"><path d="M32 8l24 12-24 12L8 20z" fill="#A78BFA"/><path d="M8 31l24 12 24-12" fill="none" stroke="#7C3AED" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 42l24 12 24-12" fill="none" stroke="#4F46E5" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+<symbol id="mkw" viewBox="0 0 64 64"><path d="M32 8l24 12-24 12L8 20z" fill="#FFFFFF"/><path d="M8 31l24 12 24-12" fill="none" stroke="#C4B5FD" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 42l24 12 24-12" fill="none" stroke="#A78BFA" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+</defs></svg>
+
+<header><div class="wrap">
+  <a class="logo" href="#top" aria-label="Sumplace home"><svg><use href="#mkw"/></svg>sumplace</a>
+  <nav aria-label="Main"><a href="#platform">Platform</a><a href="#service">Service</a><a href="#security">Security</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+  <span class="sp"></span>
+  <a class="btn ghost" href="#start" data-tab="demo">Book a demo</a>
+  <a class="btn primary" href="#start" data-tab="wait">Get early access</a>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <span class="pill"><b>New</b> Built-in AI call centre, included in every plan</span>
+  <h1>One platform to sell, deliver, support and bill.</h1>
+  <p class="lead">Sumplace replaces your CRM, PSA, help desk, quoting and contract tools with one connected system. Every quote, agreement, ticket and invoice lives on the same customer record.</p>
+  <div class="cta"><a class="btn primary" href="#start" data-tab="wait">Get early access</a><a class="btn" href="#start" data-tab="demo">Book a demo</a></div>
+  <div class="meta"><span>Set up in under a day</span><span>Hosted in Australia</span><span>Single sign-on with Google or Microsoft</span></div>
+
+  <div class="window" role="img" aria-label="The Sumplace sales pipeline screen">
+    <div class="wbar"><i></i><i></i><i></i><span class="url">acme.getsumplace.com/sales/pipeline</span></div>
+    <div class="app">
+      <div class="aside">
+        <div class="brand"><svg><use href="#mk"/></svg>Acme Group</div>
+        <div class="n"><span class="sq"></span>Home</div>
+        <div class="n"><span class="sq"></span>My work<span class="c">12</span></div>
+        <div class="g">Customers</div>
+        <div class="n"><span class="sq"></span>Companies</div>
+        <div class="n"><span class="sq"></span>Contacts</div>
+        <div class="g">Sell</div>
+        <div class="n on"><span class="sq"></span>Pipeline<span class="c">48</span></div>
+        <div class="n"><span class="sq"></span>Quotes</div>
+        <div class="n"><span class="sq"></span>Agreements</div>
+        <div class="g">Deliver</div>
+        <div class="n"><span class="sq"></span>Service desk<span class="c">37</span></div>
+        <div class="n"><span class="sq"></span>Projects</div>
+        <div class="g">Money</div>
+        <div class="n"><span class="sq"></span>Invoices</div>
+      </div>
+      <div class="main">
+        <div class="mh"><h4>Pipeline</h4><span class="s"></span><span class="b">Board</span><span class="b">Forecast</span><span class="b p">+ New deal</span></div>
+        <div class="kp">
+          <div><small>Open pipeline</small><b>$2.84M</b><em>+12% vs last month</em><svg viewBox="0 0 62 24" stroke="#4F46E5"><path d="M0 20 L10 18 L20 19 L30 13 L40 14 L50 7 L62 4"/></svg></div>
+          <div><small>Weighted</small><b>$1.31M</b><em>46% of pipeline</em><svg viewBox="0 0 62 24" stroke="#7C3AED"><path d="M0 18 L12 17 L24 14 L36 15 L48 9 L62 7"/></svg></div>
+          <div><small>Won this month</small><b>$412K</b><em>14 deals</em><svg viewBox="0 0 62 24" stroke="#12B76A"><path d="M0 21 L10 15 L20 17 L30 11 L42 12 L52 6 L62 4"/></svg></div>
+          <div><small>Avg. days to close</small><b>31</b><em>4 days faster</em><svg viewBox="0 0 62 24" stroke="#F79009"><path d="M0 6 L12 8 L24 7 L36 12 L48 13 L62 17"/></svg></div>
+        </div>
+        <div class="board">
+          <div class="col"><h5>Qualified <span>12 · $640K</span></h5>
+            <div class="deal"><div class="t"><span class="lg" style="background:#2E90FA">HV</span>Harbourview Wi-Fi refresh</div><div class="r"><span>Close 28 Nov</span><b>$84,500</b></div></div>
+            <div class="deal"><div class="t"><span class="lg" style="background:#12B76A">NC</span>Northside casting</div><div class="r"><span>Close 4 Dec</span><b>$22,900</b></div></div>
+          </div>
+          <div class="col"><h5>Proposal <span>9 · $910K</span></h5>
+            <div class="deal"><div class="t"><span class="lg" style="background:#7A5AF8">CG</span>Coastline Group IPTV</div><div class="r"><span class="tag" style="background:#EEF0FF;color:#4F46E5">Quote viewed 3×</span><b>$318,000</b></div></div>
+            <div class="deal"><div class="t"><span class="lg" style="background:#EE46BC">WG</span>Willow Grove nurse call</div><div class="r"><span>Close 12 Dec</span><b>$56,200</b></div></div>
+          </div>
+          <div class="col"><h5>Negotiation <span>6 · $780K</span></h5>
+            <div class="deal"><div class="t"><span class="lg" style="background:#F79009">MS</span>Metro Stadium signage</div><div class="r"><span class="tag" style="background:#FFF4DC;color:#9A6400">14 days in stage</span><b>$241,000</b></div></div>
+            <div class="deal"><div class="t"><span class="lg" style="background:#0BA5EC">LU</span>Lakeside Uni housing</div><div class="r"><span>Close 20 Dec</span><b>$129,400</b></div></div>
+          </div>
+          <div class="col"><h5>Won <span>14 · $412K</span></h5>
+            <div class="deal"><div class="t"><span class="lg" style="background:#16B364">RS</span>Riverside Suites support</div><div class="r"><span class="tag" style="background:#E3F6EE;color:#0B7A55">Agreement signed</span><b>$38,400</b></div></div>
+            <div class="deal"><div class="t"><span class="lg" style="background:#6172F3">PI</span>Parkside Inn upgrade</div><div class="r"><span class="tag" style="background:#E3F6EE;color:#0B7A55">Invoiced</span><b>$17,850</b></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<div class="trust"><div class="wrap">
+  <strong>Built for service businesses in</strong>
+  <span>Managed IT &amp; AV</span><span>Hospitality technology</span><span>Field service</span><span>Wholesale &amp; distribution</span><span>Safety &amp; compliance</span><span>Professional services</span>
+</div></div>
+
+<section id="platform"><div class="wrap band">
+  <div class="copy">
+    <span class="kicker">Quote to cash</span>
+    <h2 class="h2">From first quote to recurring revenue, without re-keying anything.</h2>
+    <p class="lead">The agreement sits at the centre of Sumplace. An accepted quote becomes a signed agreement, and the agreement drives billing, renewals, price changes and what your support team owes the customer.</p>
+    <ul>
+      <li><span><b>Quotes customers sign on any device</b>Branded templates, options, deposits and margin guardrails.</span></li>
+      <li><span><b>Agreements that bill themselves</b>Monthly, annual or usage billing runs, with automatic price increases and renewals.</span></li>
+      <li><span><b>Accounting stays in sync</b>Invoices, credit notes and payments post to Xero automatically.</span></li>
+    </ul>
+  </div>
+  <div class="shot"><div class="panel">
+    <div class="ph"><span class="lg" style="background:#7A5AF8">CG</span>Coastline Group · IPTV and support<span class="s"></span><span class="tag" style="background:#E3F6EE;color:#0B7A55">Active</span></div>
+    <div class="flow">
+      <div><b>Quote</b>Q-41207 · v3</div>
+      <div><b>Signed</b>DocuSign · 3 Nov</div>
+      <div class="on"><b>Agreement</b>36 months</div>
+      <div><b>Billing</b>Monthly · 1st</div>
+      <div><b>Renewal</b>Nov 2029</div>
+    </div>
+    <div class="lines">
+      <div class="l hd"><span>Line</span><span>Qty</span><span>Monthly</span></div>
+      <div class="l"><span>IPTV licence, per room</span><span>412</span><span>$7,416</span></div>
+      <div class="l"><span>Casting, per room</span><span>412</span><span>$2,266</span></div>
+      <div class="l"><span>Managed support, 24/7, 1 h response</span><span>1</span><span>$1,950</span></div>
+    </div>
+    <div class="tot"><span>Monthly recurring</span><span>$11,632</span></div>
+  </div></div>
+</div></section>
+
+<section id="service" class="alt"><div class="wrap band rev">
+  <div class="copy">
+    <span class="kicker">Service and support</span>
+    <h2 class="h2">A service desk that knows what every customer is paying for.</h2>
+    <p class="lead">Tickets arrive from email, phone, portal, chat and WhatsApp into one queue, already matched to the customer's agreement, sites and response times.</p>
+    <ul>
+      <li><span><b>AI call centre included</b>A voice assistant answers, identifies the caller, logs the ticket and books the technician, around the clock.</span></li>
+      <li><span><b>SLAs you can see</b>Response and resolution clocks on every ticket, with warnings before a breach.</span></li>
+      <li><span><b>Knowledge that builds itself</b>Fixes become articles, linked to the products and firmware they apply to.</span></li>
+    </ul>
+  </div>
+  <div class="shot"><div class="panel">
+    <div class="call"><span class="av">AI</span><div style="font-size:12px;min-width:0"><b style="font-size:13px">Incoming call · Coastline Grand Sydney</b><br><span style="color:#5D6B85">"The TVs on level 14 show no signal"</span></div><div class="wave" aria-hidden="true"><i style="height:30%"></i><i style="height:70%"></i><i style="height:45%"></i><i style="height:90%"></i><i style="height:55%"></i><i style="height:75%"></i><i style="height:35%"></i><i style="height:85%"></i><i style="height:50%"></i></div></div>
+    <div class="tkt"><div><b>T-88214 · Level 14 TVs no signal</b><br><small>Coastline Grand Sydney · High · Logged by AI</small></div><div class="sla"><small>Response</small><i style="--w:38%;--c:#12B76A"></i></div></div>
+    <div class="tkt"><div><b>T-88209 · Lobby screen flickering</b><br><small>Riverside Suites · Normal</small></div><div class="sla"><small>Resolve</small><i style="--w:72%;--c:#F79009"></i></div></div>
+    <div class="tkt"><div><b>T-88197 · Guest Wi-Fi slow on floor 3</b><br><small>Harbourview Hotel · High</small></div><div class="sla"><small>Resolve</small><i style="--w:91%;--c:#D92D20"></i></div></div>
+    <div class="tl"><div><i style="background:#E3F6EE;color:#0B7A55">&#10003;</i><div>Technician booked for Fri 9:00<small>Confirmed to the customer by SMS</small></div></div></div>
+  </div></div>
+</div></section>
+
+<section><div class="wrap band">
+  <div class="copy">
+    <span class="kicker">Work and people</span>
+    <h2 class="h2">Smart tasks, projects and HR in the same place.</h2>
+    <p class="lead">Sumplace sets the next step for your team, runs projects and purchasing, and looks after staff from their first day to their last.</p>
+    <ul>
+      <li><span><b>Follow-ups that create themselves</b>Quote viewed three times? Call today. No answer? Try again tomorrow.</span></li>
+      <li><span><b>Onboarding from role templates</b>New starters get the right accounts and training automatically.</span></li>
+      <li><span><b>Offboarding in one step</b>When someone leaves, every login is switched off at once, with a full record.</span></li>
+    </ul>
+  </div>
+  <div class="shot"><div class="panel">
+    <div class="ph">Offboarding · Jordan Ellis<span class="s"></span><span class="tag" style="background:#E3F6EE;color:#0B7A55">Complete</span></div>
+    <div class="rows">
+      <div><span>Google Workspace</span><span class="ok">Suspended</span></div>
+      <div><span>Microsoft 365</span><span class="ok">Disabled</span></div>
+      <div><span>Phone extension 214</span><span class="ok">Removed</span></div>
+      <div><span>Sumplace sign-in</span><span class="ok">Revoked</span></div>
+      <div><span>Laptop and phone return</span><span style="color:#9A6400;font-weight:600;font-size:11.5px">Task for manager</span></div>
+    </div>
+  </div></div>
+</div></section>
+
+<section id="security" class="alt"><div class="wrap">
+  <span class="kicker">Platform and security</span>
+  <h2 class="h2" style="max-width:20ch">Built for the way serious businesses work.</h2>
+  <div class="grid3">
+    <div class="gi"><div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><h3>Single sign-on and 2FA</h3><p>Staff sign in with Google or Microsoft. Customers use Google, Microsoft or email with two-factor authentication.</p></div>
+    <div class="gi"><div class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div><h3>A database per customer</h3><p>Every business gets its own separate database with its own credentials. No shared tables.</p></div>
+    <div class="gi"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Encrypted everywhere</h3><p>Encrypted in transit and at rest with dedicated keys. Secrets never live in code.</p></div>
+    <div class="gi"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><h3>Full audit trail</h3><p>Every change is recorded with who, what and when. Filter it and export it whenever you need to.</p></div>
+    <div class="gi"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Multi-country by design</h3><p>Branches with their own currencies, tax rules and time zones, rolled up in one view.</p></div>
+    <div class="gi"><div class="ic"><svg viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div><h3>Open API</h3><p>A documented REST API and webhooks, so Sumplace fits into the rest of your stack.</p></div>
+  </div>
+  <div class="ints" aria-label="Integrations">
+    <span>Xero</span><span>Google Workspace</span><span>Microsoft 365</span><span>3CX</span><span>DocuSign</span><span>Stripe</span><span>Twilio</span><span>Zabbix</span><span>Amazon SES</span><span>Claude AI</span>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <span class="kicker">Pricing</span>
+  <h2 class="h2">Simple per-user pricing. Every module included.</h2>
+  <p class="lead">No add-on fees for the service desk, AI call centre or billing. Pay for the people who use it.</p>
+  <div class="plans">
+    <div class="plan">
+      <h3>Standard</h3>
+      <p class="d">For the people who sell, deliver and support.</p>
+      <div class="price"><b>$85</b><span>AUD per user / month</span></div>
+      <ul><li>CRM, pipeline, quotes and e-signing</li><li>Agreements and automated billing</li><li>Service desk, projects and smart tasks</li><li>AI call centre and AI assistant</li><li>Mobile app and customer portal</li></ul>
+      <a class="btn" href="#start" data-tab="wait">Get early access</a>
+    </div>
+    <div class="plan hl">
+      <span class="badge">Admins</span>
+      <h3>Admin</h3>
+      <p class="d">For the people who configure Sumplace and connect it to everything else.</p>
+      <div class="price"><b>$110</b><span>AUD per user / month</span></div>
+      <ul><li>Everything in Standard</li><li>Settings, roles and permissions</li><li>API access and webhooks</li><li>Integrations: Xero, Google, Microsoft, 3CX and more</li><li>Audit log and data exports</li></ul>
+      <a class="btn primary" href="#start" data-tab="wait">Get early access</a>
+    </div>
+    <div class="plan">
+      <h3>Enterprise</h3>
+      <p class="d">For larger teams with their own hosting, security or migration needs.</p>
+      <div class="price"><b style="font-size:34px">Let's talk</b></div>
+      <ul><li>Dedicated hosting options</li><li>Migration from your current PSA or CRM</li><li>Security review and custom terms</li><li>Named success manager</li></ul>
+      <a class="btn" href="#start" data-tab="demo">Book a demo</a>
+    </div>
+  </div>
+  <p class="fine">Prices in Australian dollars, excluding GST. Customer portal users are free.</p>
+</div></section>
+
+<section id="faq" class="alt"><div class="wrap faqgrid">
+  <div><span class="kicker">FAQ</span><h2 class="h2">Questions, answered.</h2><p class="lead">Can't find what you need? Book a demo and ask us directly.</p></div>
+  <div>
+    <details><summary>Can Sumplace replace our current PSA and CRM?</summary><p>Yes. Sumplace covers CRM, quoting, agreements, service desk, projects, purchasing and billing. We can migrate your companies, contacts, sites, tickets and products from your current system.</p></details>
+    <details><summary>How long does set-up take?</summary><p>A guided set-up reads your website, suggests your branches, modules and settings, and imports your data from spreadsheets with a preview. Most teams are working in Sumplace within a day.</p></details>
+    <details><summary>Does it work with Xero?</summary><p>Yes. Invoices, credit notes and payments sync to Xero, and Sumplace stays the system your team works in.</p></details>
+    <details><summary>Where is our data hosted?</summary><p>In Australia, on AWS, with each business in its own encrypted database, automated backups and copies kept in a second region.</p></details>
+    <details><summary>What's the difference between Standard and Admin users?</summary><p>Admins can change settings, manage users and permissions, use the API and connect integrations. Everyone else is a Standard user.</p></details>
+  </div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <div class="ctaband">
+    <div>
+      <span class="kicker" style="color:#A5B4FC">Early access</span>
+      <h2>See Sumplace with your own data.</h2>
+      <p>We're onboarding a limited number of businesses ahead of general release. Join the early access list or book a 30-minute walkthrough.</p>
+    </div>
+    <div>
+      <div class="seg" role="tablist" aria-label="Choose">
+        <button type="button" role="tab" id="t-wait" aria-selected="true" aria-controls="f">Early access</button>
+        <button type="button" role="tab" id="t-demo" aria-selected="false" aria-controls="f">Book a demo</button>
+      </div>
+      <form id="f" novalidate>
+        <div class="fr">
+          <label for="f-name">Full name<input id="f-name" name="fullname" autocomplete="name" placeholder="Alex Morgan"></label>
+          <label for="f-company">Company<input id="f-company" name="company" autocomplete="organization" placeholder="Harbourview Group"></label>
+        </div>
+        <div class="fr">
+          <label for="f-email">Work email<input id="f-email" name="workemail" type="email" autocomplete="email" placeholder="alex@harbourview.com.au"></label>
+          <label for="f-size">Team size<select id="f-size" name="size"><option>1-10</option><option selected>11-50</option><option>51-200</option><option>201-1,000</option><option>1,000+</option></select></label>
+        </div>
+        <button class="btn primary" type="submit" id="f-submit">Request early access</button>
+        <p class="note">We reply within one business day.</p>
+      </form>
+      <div class="done" id="done" role="status"></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><a class="logo" href="#top"><svg><use href="#mk"/></svg>sumplace</a><p style="margin-top:12px;max-width:32ch">The business platform for companies that sell, deliver and support.</p></div>
+    <div><h4>Product</h4><a href="#platform">Quote to cash</a><a href="#service">Service desk</a><a href="#service">AI call centre</a><a href="#pricing">Pricing</a></div>
+    <div><h4>Platform</h4><a href="#security">Security</a><a href="#security">Integrations</a><a href="#security">API</a></div>
+    <div><h4>Company</h4><a href="#start">Book a demo</a><a href="#faq">FAQ</a><a href="#start">Early access</a></div>
+  </div>
+  <div class="legal"><span>&copy; 2026 Sumplace. All rights reserved.</span><a href="mailto:hello@getsumplace.com">hello@getsumplace.com</a></div>
+</div></footer>
+
+<script>
+(function(){
+  var mode='wait', tw=document.getElementById('t-wait'), td=document.getElementById('t-demo'), sub=document.getElementById('f-submit');
+  function set(m){mode=m;tw.setAttribute('aria-selected',m==='wait');td.setAttribute('aria-selected',m==='demo');sub.textContent=m==='wait'?'Request early access':'Request a demo';}
+  tw.addEventListener('click',function(){set('wait')}); td.addEventListener('click',function(){set('demo')});
+  document.querySelectorAll('[data-tab]').forEach(function(a){a.addEventListener('click',function(){set(a.getAttribute('data-tab'))})});
+  document.getElementById('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target, n=f.elements['fullname'].value.trim(), co=f.elements['company'].value.trim(), em=f.elements['workemail'].value.trim(), sz=f.elements['size'].value, d=document.getElementById('done');
+    d.style.display='block';
+    if(!n||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){d.textContent='Please add your name and a valid work email.';return;}
+    var subj=(mode==='wait'?'Early access request: ':'Demo request: ')+(co||n);
+    var msg='Name: '+n+'\nCompany: '+co+'\nWork email: '+em+'\nTeam size: '+sz+'\nRequest: '+(mode==='wait'?'Early access':'Book a demo');
+    window.location.href='mailto:hello@getsumplace.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(msg);
+    d.textContent='Thanks, '+n.split(' ')[0]+'. Your email app should open with your details filled in. Press send and we will be in touch. If nothing opened, email hello@getsumplace.com.';
+  });
+})();
+</script>
+</body>
+</html>
